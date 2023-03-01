@@ -1,1 +1,1 @@
-#regular expression
+#regular expressions
