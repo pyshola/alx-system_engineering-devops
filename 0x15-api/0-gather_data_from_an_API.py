@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Script that uses JSONPlaceholder API to get information about employee """
 from requests import get
-import sys
+from sys import argv
 
 
 if __name__ == "__main__":
