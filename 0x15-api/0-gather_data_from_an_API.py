@@ -16,6 +16,7 @@ if __name__ == "__main__":
     res = requests.get(todos)
     tasks = res.json()
     l_task = []
+
     for task in tasks:
         if task.get('completed') is True:
             l_task.append(task)
