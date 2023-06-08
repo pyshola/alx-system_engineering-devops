@@ -55,6 +55,7 @@ def recurse(subreddit, dictionary, after=None):
 def count_words(subreddit, word_list):
     """ Init function """
     dictionary = {}
+    val = {}
 
     for word in word_list:
         dictionary[word] = 0
@@ -64,10 +65,20 @@ def count_words(subreddit, word_list):
     l = sorted(dictionary.items(), key=lambda kv: kv[1])
     l.reverse()
 
+
     if len(l) != 0:
         for item in l:
             #print(item)
             if item[1] != 0:
-                print("{}: {}".format(item[0], item[1]))
+                #print("{}: {}".format(item[0], item[1]))
+                key = item[0]
+                if val.get(key.lower()) is not None:
+                    val[key.lower()] = int(val[key.lower()]) + int(item[1])
+                else:
+                    val[key.lower()] = item[1]
     else:
         print("")
+
+    for key, value in val.items():
+        print("{}: {}".format(key, value))
+        
